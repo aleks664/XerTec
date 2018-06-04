@@ -1,0 +1,33 @@
+.pagination {
+  margin-top: 15px;
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    li {
+      float: left;
+      margin-right: 8px;
+      span,
+      a {
+        display: block;
+        width: 30px;
+        height: 30px;
+        border: none;
+        line-height: 30px;
+        text-align: center;
+        background-color: #FFF;
+        color: #000;
+        &:hover {
+          background: $blueDark;
+          color: $white;
+        }
+      }
+      span:hover,
+      span {
+        background: $blue;
+        color: $white;
+      }
+    }
+  }
+}

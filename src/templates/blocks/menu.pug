@@ -1,0 +1,12 @@
+nav
+  .wrapper.clearfix.Verdana
+    ul
+      each val, index in nav
+        li(class=(pageId == index) ? 'active': '')
+          a(href=val.url)= val.name
+          if index === 3
+            ul
+              li
+                a(href="#") Розничные магазины
+              li
+                a(href="#") Интернет магазины

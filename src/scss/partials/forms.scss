@@ -1,0 +1,260 @@
+.form-group {
+  margin-bottom: 30px;
+  @include mq('tablet') {
+    margin-bottom: 15px;
+  }
+}
+.inp-wrap-checkbox {
+  &:after {
+    display: none;
+  }
+}
+.inp-wrap {
+  position: relative;
+  &:after {
+    content: '';
+    top: 28px;
+    right: 20px;
+    position: absolute;
+    @include sprite($checked-blue);
+    opacity: 0;
+    @include transition();
+  }
+  &.error {
+    .form-control {
+      border-color: $red;;
+    }
+    .form-radio,
+    .form-checkbox {
+      .icon-wrap {
+        border-color: $red;;
+      }
+    }
+  }
+  &.validate {
+    &:after {
+      opacity: 1;
+    }
+    .form-control {
+      background: #E8EEF5;
+    }
+    .form-label {
+      font-size: 14px;
+      line-height: 17px;
+      padding-top: 15px;
+      font-weight: bold;
+    }
+  }
+}
+.radio,
+.checkbox {
+  position: absolute;
+  visibility: hidden;
+  z-index: -100;
+}
+.form-control {
+  padding: 39px 15px 7px;
+  width: 100%;
+  display: block;
+  font-size: 17px;
+  line-height: 23px;
+  font-weight: bold;
+  border: 1px solid #E8E8E8;
+  color: #000;
+  &::-webkit-input-placeholder {
+    opacity: 1;
+    color: #000;
+  }
+  &:-moz-placeholder {
+    opacity: 1;
+    color: #000;
+  }
+  &::-moz-placeholder {
+    opacity: 1;
+    color: #000;
+  }
+  &:-ms-input-placeholder {
+    opacity: 1;
+    color: #000;
+  }
+}
+textarea.form-control {
+  height: auto;
+  resize: none;
+  outline: none!important;
+}
+.form-label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 23px 15px;
+  font-size: 17px;
+  line-height: 24px;
+  cursor: text;
+  color: #B1B1B1;
+  @include transition();
+}
+.form-control:focus + .form-label {
+  font-size: 14px;
+  line-height: 17px;
+  padding-top: 15px;
+  font-weight: bold;
+}
+.form-checkbox {
+  cursor: pointer;
+  display: inline-block;
+   position: relative;
+   padding-left: 45px;
+   padding-top: 6px;
+   .icon-wrap {
+     border: 1px solid #E8E8E8;
+     width: 34px;
+     height: 34px;
+     line-height: 34px;
+     position: absolute;
+     top: 0;
+     left: 0;
+     @include transition();
+     text-align: center;
+     .icon {
+       vertical-align: middle;
+       top: -2px;
+       opacity: 0;
+       @include transition();
+     }
+   }
+ }
+.checkbox:checked + .form-checkbox {
+  .icon-wrap {
+    border-color: $blue;
+    .icon {
+      opacity: 1;
+    }
+  }
+}
+
+.form-radio {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  padding-left: 45px;
+  padding-top: 6px;
+  .icon-wrap {
+    border: 1px solid #E8E8E8;
+    width: 34px;
+    height: 34px;
+    border-radius: 100%;
+    line-height: 34px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    @include transition();
+    text-align: center;
+    span {
+      border-radius: 100%;
+      width: 14px;
+      height: 14px;
+      display: inline-block;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      background: $blue;
+      opacity: 0;
+      margin: -7px 0 0 -7px;
+      @include transition();
+    }
+  }
+}
+.radio:checked + .form-radio {
+  .icon-wrap {
+    border-color: $blue;
+    span {
+      opacity: 1;
+    }
+  }
+}
+
+.forms-errors {
+  padding-bottom: 15px;
+  position: relative;
+  margin: 0 0 50px;
+  display: none;
+  @include mq('tablet') {
+    margin-bottom: 25px;
+  }
+  @include mq('phone-wide') {
+    margin-bottom: 15px;
+  }
+  &:after {
+    content: '';
+    width: 70px;
+    height: 2px;
+    background: $red;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    margin-left: -35px;
+  }
+}
+.inp-count-wrap {
+  label {
+    font-size: 16px;
+    line-height: 20px;
+    padding-bottom: 10px;
+    display: block;
+  }
+  input.form-control {
+    font-size: 17px;
+    line-height: 24px;
+    padding:  23px 15px;
+    text-align: center;
+  }
+  .count {
+    position: relative;
+    a {
+      position: absolute;
+      top: 0;
+      height: 100%;
+      width: 50px;
+      border: none;
+      &:after {
+        content: '';
+        top: 50%;
+        left: 50%;
+        width: 0;
+        height: 0;
+        position: absolute;
+        @include transition();
+      }
+      &.minus {
+        left: 0;
+        &:after {
+          border: 5px solid transparent;
+          border-left: none;
+          border-right: 6px solid #E3F0FB;
+          margin-top: -5px;
+        }
+        &:hover {
+          &:after {
+            border-right-color: $blue;
+          }
+        }
+      }
+      &.plus {
+        right: 0;
+        &:after {
+          border: 5px solid transparent;
+          border-right: none;
+          border-left: 6px solid #E3F0FB;
+          margin-top: -5px;
+        }
+        &:hover {
+          &:after {
+            border-left-color: $blue;
+          }
+        }
+      }
+    }
+  }
+}

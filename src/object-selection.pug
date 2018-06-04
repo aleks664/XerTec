@@ -1,0 +1,203 @@
+extends templates/base/base.pug
+append vars
+  - var pageUrl = 'object-selection.html';
+  - var pageTitle = 'Object selection';
+
+
+block content
+  +breadcrumbs('Wohnungen/EFH', 'Startsite')
+  .wrapper
+    // start object-selection
+    .object-selection
+      // start tabs-head
+      .tabs-head.text-center
+        ul
+          li.active
+            a(href="#tab1")
+              .icon-wrap
+                i.icon.icon_setting-gray-small
+              span Geräte
+          li
+            a(href="#tab2")
+              .icon-wrap
+                i.icon.icon_house-gray-small
+              span Wohnungen/EFH
+      // end tabs-head
+      form
+        .forms-errors.red.text-center forms-errors
+        .row
+          .tbl.tbl-fixed
+            .tbc
+              .tabs-wrapper
+                .tab#tab1.active
+                  .box-blue
+                    .ttl.bold Anfangskonfigurator
+                    .row.what-need
+                      .tbl.tbl-fixed
+                        .tbc
+                          .form-group
+                            .inp-count-wrap
+                              label(for="inp-number1") Trocknungsgeräte:
+                              .count
+                                a(href="#").plus
+                                a(href="#").minus
+                                input(type="text" name="", id="inp-number1", value='1', data-step="1", data-min="1").inp-number.form-control
+                        .tbc
+                          .form-group
+                            .inp-count-wrap
+                              label(for="inp-number2") Ventilatoren:
+                              .count
+                                a(href="#").plus
+                                a(href="#").minus
+                                input(type="text" name="", id="inp-number2", value='1', data-step="1", data-min="1").inp-number.form-control
+                        .tbc
+                          .form-group
+                            .inp-count-wrap
+                              label(for="inp-number3") Mietdauer (Tg):
+                              .count
+                                a(href="#").plus
+                                a(href="#").minus
+                                input(type="text" name="", id="inp-number3", value='1', data-step="1", data-min="1").inp-number.form-control
+                .tab#tab2
+                  .box-blue
+                    .ttl.bold Anfangskonfigurator
+                    .row.apartments
+                      .tbl
+                        .tbc
+                          .form-group
+                            .inp-count-wrap
+                              label(for="inp-apartments1") Typ
+                              .count
+                                a(href="#").plus
+                                a(href="#").minus
+                                input(type="text" name="", id="inp-apartments1", value='1', data-step="1", data-min="1").inp-number.form-control
+                        .tbc
+                          .form-group
+                            .inp-count-wrap
+                              label(for="inp-apartments2") Fläche
+                              .count
+                                a(href="#").plus
+                                a(href="#").minus
+                                input(type="text" name="", id="inp-apartments2", value='1', data-step="1", data-min="1").inp-number.form-control
+                        .tbc
+                          .form-group
+                            .inp-count-wrap
+                              label(for="inp-apartments3") Anzahl Zimmer
+                              .count
+                                a(href="#").plus
+                                a(href="#").minus
+                                input(type="text" name="", id="inp-apartments3", value='2.5', data-step="0.5", data-min="2.5").inp-number.form-control
+                        .tbc
+                          .form-group
+                            .inp-count-wrap
+                              label(for="inp-apartments4") Raumhöhe
+                              .count
+                                a(href="#").plus
+                                a(href="#").minus
+                                input(type="text" name="", id="inp-apartments4", value='30', data-step="1", data-min="30").inp-number.form-control
+                        .tbc
+                          .form-group
+                            .lbl  Volumen
+                            .area 75 m3
+                        .tbc.tbc-order
+                          .lbl &nbsp;
+                            span.abs Trocknungs
+                          .order
+                            .open
+                            .list
+                              input.radio#order1(type="radio" name="order" checked)
+                              label(for='order1') 1
+                              input.radio#order2(type="radio" name="order")
+                              label(for='order2') 2
+                              input.radio#order3(type="radio" name="order")
+                              label(for='order3') 3
+                              input.radio#order4(type="radio" name="order")
+                              label(for='order4') 4
+                              input.radio#order5(type="radio" name="order")
+                              label(for='order5') 5
+                              input.radio#order6(type="radio" name="order")
+                              label(for='order6') 6
+                              input.radio#order7(type="radio" name="order")
+                              label(for='order7') 7
+                              input.radio#order8(type="radio" name="order")
+                              label(for='order8') 8
+                              input.radio#order9(type="radio" name="order")
+                              label(for='order9') 9
+                              input.radio#order10(type="radio" name="order")
+                              label(for='order10') 10
+                        .tbc.tbc-remove
+                          .lbl &nbsp;
+                          a(href="#").remove -
+
+                    a(href="#").btn.btn-lg.bold.btn-full Neues Trocknungsobjekt +
+              .box-blue
+                .ttl.bold Wann soll der Auftrag ca. ausgefuhrt werden
+                ul.years-list
+                  li
+                    +radio('years1', 'years', '2018')(checked)
+                  li
+                    +radio('years2', 'years', '2019')
+                .form-group.text-center
+                  ul.month-list
+                    li
+                      +radio('month1', 'month', 'Jn')(checked)
+                    li
+                      +radio('month2', 'month', 'Fb')
+                    li
+                      +radio('month3', 'month', 'Mr')
+                    li
+                      +radio('month4', 'month', 'Ar')
+                    li
+                      +radio('month5', 'month', 'Mi')
+                    li
+                      +radio('month6', 'month', 'Jn')
+                    li
+                      +radio('month7', 'month', 'Jl')
+                    li
+                      +radio('month8', 'month', 'Ag')
+                    li
+                      +radio('month9', 'month', 'Sp')
+                    li
+                      +radio('month10', 'month', 'Okt')
+                    li
+                      +radio('month11', 'month', 'Nv')
+                    li
+                      +radio('month12', 'month', 'Dz')
+
+                +textarea('usermessage: ', 'Zusätzliches: Spezielle Anforderungen...')( rows="5")
+                  .form-group
+            .tbc
+              .box-blue
+                .ttl.bold
+                  |Objekt Standort
+                  = ' '
+                  .city 4663 Aarburg
+                +formGroup('object-1','text', 'Strasse Nr.').required(data-error="Заполните поле Strasse Nr.")
+                +formGroup('object-2', 'text', 'Beschreibung').required(data-error="Заполните поле Beschreibung")
+                .price
+                  .bold Richtpreis
+                  div Anzahl Trocknungsgeräte
+                    = ' '
+                    b 1 Stk.
+                  div Anzahl Ventilatoren
+                    = ' '
+                    b 0 Stk.
+                  div Mietkosten:
+                    = ' '
+                    b 100.00
+                .total-sum
+                  .tbl
+                    .tbc.bold Total:
+                    .tbc.text-right 100.00
+              .footnonte.italic * alle Preisangaben in CHF inkl. Zusatzleistungen #[br](w.z.B. Montage, Demontage, Zusatzmaterial etc.
+              .btm
+                .personal-data
+                  +checkbox('personal', 'Sie sind mit der <a href="#">Datenschutzerklarung</a> <br>einverstanden').required(checked, data-error="Заполните поле Sie sind mit der")
+                button.btn.btn-green.btn-lg.btn-full.bold Offerte anfordern
+
+    // end object-selection
+
+block scripts
+
+
+

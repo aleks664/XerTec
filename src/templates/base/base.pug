@@ -1,0 +1,38 @@
+doctype html
+html
+  block vars
+   - var pageTitle = '';
+   - var nav = [{url: 'index.html', name: 'Главная'}, {url: 'about.html', name: 'О компании'}, {url: 'catalog.html', name: 'Каталог'}, {url: 'wheretobuy.html', name: 'Где купить'}, {url: 'our-facilities.html', name: 'Наши объекты'}, {url: 'open-club.html', name: 'Открыть клуб'}, {url: 'contacts.html', name: 'Контакты'}, {url: 'for-dealers.html', name: 'Для дилеров'}];
+  head
+    meta(charset="utf-8")
+    title=pageTitle
+    meta( name="description" content="" )
+    meta( name="keywords" content="" )
+    meta( name="viewport" content="width=device-width, initial-scale=1")
+    meta( name="format-detection" content="telephone=no")
+    link(rel="shortcut icon" href="img/favicon.ico" )
+    block styles
+    link(rel="stylesheet" href="css/template_styles.css")
+  body
+    include mixin.pug
+    block body
+      block header
+        if pageUrl == "index.html"
+          include ../blocks/header.pug
+        else
+          include ../blocks/header-inner.pug
+      block main
+        block content
+
+      block footer
+        include ../blocks/footer.pug
+      include ../blocks/popup.pug
+    script(type="text/javascript" src="js/jquery.js")
+    script(type="text/javascript" src="js/fancybox.js")
+    script(type="text/javascript" src="js/mask.js")
+    script(type="text/javascript" src="js/slick-carousel.js")
+    block scripts
+    script(type="text/javascript" src="js/app.js")
+
+
+

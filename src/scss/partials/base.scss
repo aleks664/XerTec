@@ -1,0 +1,253 @@
+
+html {
+  height: 100%;
+}
+body {
+  font-family: $baseFontFamily;
+  color: $baseFontColor;
+  font-size: $baseFontSize;
+  line-height: $baseLineHeight;
+  font-weight: $baseFontWeight;
+  font-style: $baseFontStyle;
+  min-height: 100%;
+  position: relative;
+  background: $baseBg;
+  overflow-y: scroll;
+  @include mq('tablet') {
+    font-size: 16px;
+    line-height: 26px;
+  }
+}
+* {
+  box-sizing: border-box;
+}
+/* Сброс float блоков | let's clear some floats */
+.clear { clear:both; height:0; font-size:0; line-height:0; }
+.clearfix:after {
+  content: '.';
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+button,
+input[type='submit'] {
+  @include transition();
+}
+a {
+  color: $baseLinkColor;
+  text-decoration: none;
+  border-bottom: 1px solid;
+  @include transition();
+}
+a:hover {
+  color: $baseLinkColorHover;
+  text-decoration: none;
+}
+
+a[href^="tel:"] {
+  text-decoration: none;
+  color: inherit;
+}
+.js-lnk {
+  text-decoration: none;
+  border-bottom: 1px dashed;
+}
+p {
+  margin: 0 0 20px;
+}
+img {
+  max-width: 100%;
+}
+input, button,
+a:focus, a:hover {
+  outline: none!important;
+}
+.graphite-black{
+  color: $GraphiteBlack;
+}
+h1 , .h1 {
+  font-size: 34px;
+  line-height: 37px;
+  margin: 0 0 7px;
+  color: $GraphiteBlack;
+  @include mq('tablet') {
+    font-size: 30px;
+    line-height: 33px;
+
+  }
+}
+h2 , .h2 {
+  margin: 0 0 15px;
+  font-size: 24px;
+  line-height: 27px;
+  color: $GraphiteBlack;
+}
+h3 , .h3 {
+  margin: 0 0 15px;
+  color: $GraphiteBlack;
+}
+h4 , .h4 {
+  margin: 0 0 15px;
+  color: $GraphiteBlack;
+}
+h5 , .h5 {
+  margin: 0 0 15px;
+  color: $GraphiteBlack;
+}
+h6 , .h6 {
+  margin: 0 0 15px;
+  color: $GraphiteBlack;
+}
+
+.upper {
+  text-transform: uppercase;
+}
+.red {
+  color: $red;
+}
+.blue {
+  color: $blue;
+}
+.white {
+  color: $white;
+}
+.bold {
+  font-weight: bold;
+}
+.medium {
+  font-weight: 500;
+}
+.italic {
+  font-style: italic;
+}
+.text-center {
+  text-align: center;
+}
+.text-right {
+  text-align: right;
+}
+.text-left {
+  text-align: left;
+}
+.wrapper {
+  max-width: $contentWidth;
+  padding: $contentWidthPadding;
+  margin: 0 auto;
+  @extend .clearfix;
+}
+.row {
+  margin: 0 -15px;
+  @extend .clearfix;
+}
+.left {
+  float: left;
+}
+.right {
+  float: right;
+}
+.head-border {
+  padding-bottom: 15px;
+  position: relative;
+  margin: 0 0 50px;
+  @include mq('tablet') {
+    margin-bottom: 25px;
+  }
+  @include mq('phone-wide') {
+    margin-bottom: 15px;
+  }
+  &.border-left {
+    &:after {
+      margin-left: 0;
+      left: 0;
+    }
+  }
+  &:after {
+    content: '';
+    width: 70px;
+    height: 2px;
+    background: $blue;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    margin-left: -35px;
+  }
+  .title {
+    margin: 0 0 7px;
+  }
+  &.white {
+    .title {
+      color: $white;
+    }
+  }
+}
+@include mq('tablet') {
+  .hidden-tablet {
+    display: none!important;
+  }
+}
+@include mq('tablet', min) {
+  .hidden-dtablet {
+    display: none!important;
+  }
+
+}
+.tabs-wrapper {
+  position: relative;
+  overflow: hidden;
+  .tab {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    opacity: 0;
+    visibility: hidden;
+    z-index: -100;
+    @include transition();
+    &.active {
+      visibility: visible;
+      position: relative;
+      opacity: 1;
+      z-index: auto;
+    }
+  }
+}
+.tbl {
+  display: table;
+  width: 100%;
+  &.tbl-fixed {
+    table-layout: fixed;
+  }
+  .tbc {
+    display: table-cell;
+  }
+}
+.main-column-wrap {
+  @include mq('tablet-wide',min) {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+    >.column {
+      display: table-cell;
+      vertical-align: top;
+      &.column-left-small {
+        width: 300px;
+        padding-right: 20px;
+      }
+    }
+  }
+  @include mq('tablet-wide') {
+    >.column.column-left-small {
+      padding-bottom: 15px;
+    }
+
+  }
+}
+a.lnk-abs {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}

@@ -1,0 +1,21 @@
+- var sidebarShop = [{url: 'Online-Shop.html', name: 'Klimageräte', lot: '', icon: 'arrow-down', submenu: [{url: '#', name: 'Büroraum', lot: '', icon: '', submenu: false}, {url: '#', name: 'Mobile Geräte', lot: '', icon: 'arrow-down', submenu: [{url: '#', name: 'Keller', lot: '10', icon: '', submenu: ''}, {url: '#', name: 'Wohnen', lot: '20', icon: '', submenu: ''}, {url: '#', name: 'Keller', lot: '16', icon: '', submenu: ''}]}, {url: '#', name: 'Weinkeller', lot: '', icon: '', submenu: ''}, {url: '#', name: 'Wohnraum', lot: '', icon: '', submenu: ''}]}, {url: '#', name: 'Luftentfeuchter', lot: '', icon: 'arrow-down', submenu: [{url: '#', name: 'Bad/Schwimmbad', lot: '', icon: '', submenu: ''}, {url: '#', name: 'Keller', lot: '', icon: '', submenu: ''}, {url: '#', name: 'Wohnen', lot: '', icon: '', submenu: ''}]}, {url: '#', name: 'Wäschetrockner', lot: '', icon: 'arrow-down', submenu: [{url: '#', name: 'Einfamilienhaus', lot: '', icon: '', submenu: ''}, {url: '#', name: 'Mehrfamilienhaus', lot: '', icon: '', submenu: ''},]}, {url: '#', name: 'Luftbefeuchter', lot: '', icon: 'arrow-down', submenu: [{url: '#', name: 'Büro/Wohnen', lot: '', icon: '', submenu: ''}]}];
+.sidebar
+  nav.nav-shop
+    mixin sidebar(data)
+      ul
+        each item in data
+          li(class=(pageUrl ==item.url) ? 'active': '' class=(item.submenu) ? 'submenu-item': '')
+            a(href=item.url)
+              if item.lot
+                span
+                  !=item.name
+                  span.lot!=item.lot
+              else
+                !=item.name
+            if item.icon
+              span.icon-wrap
+                i.icon(class="icon icon_"+item.icon)
+            if item.submenu
+              +sidebar(item.submenu)
+    +sidebar(sidebarShop)
+    //{url: '#', name: 'Büroraum', lot: '', icon: '', submenu: ''}

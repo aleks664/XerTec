@@ -1,0 +1,104 @@
+.user-sidebar {
+  background: $blueSuperLight;
+  .user-info {
+    padding: 30px 15px 25px;
+    font-size: 14px;
+    line-height: 18px;
+    .userphone {
+      font-size: 16px;
+      line-height: 19px;
+    }
+    .ava {
+      width: 95px;
+      height: 95px;
+      background: #E5EAF0;
+      border-radius: 100%;
+      position: relative;
+      overflow: hidden;
+      &:before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin: -22px 0 0 -19px;
+        @include sprite($profile-ava);
+      }
+      img {
+        display: block;
+        width: 100%;
+        position: relative;
+        z-index: 1;
+      }
+    }
+    .tbc {
+      padding-left: 15px;
+      vertical-align: middle;
+    }
+    .tbc-ava {
+      width: 95px;
+      padding: 0;
+
+    }
+  }
+  nav {
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      li {
+        a {
+          display: block;
+          position: relative;
+          border: none;
+          padding: 22px 15px 22px 60px;
+          font-size: 16px;
+          line-height: 20px;
+          color: #000;
+          &:after {
+            width: 5px;
+            height: 100%;
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: $blue;
+            opacity: 0;
+            @include transition();
+          }
+          &:hover {
+            background: #E6EBF2;
+          }
+          .icon-wrap {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            left: 16px;
+            top: 17px;
+            text-align: center;
+            line-height: 30px;
+            .icon {
+              vertical-align: middle;
+            }
+          }
+        }
+        &.active {
+          a {
+            background: $white;
+            &:after {
+              opacity: 1;
+            }
+            .icon_eye {
+              @include sprite($eye-blue);
+            }
+            .icon_user-black {
+              @include sprite($user-blue);
+            }
+            .icon_castle {
+              @include sprite($castle-blue);
+            }
+          }
+        }
+      }
+    }
+  }
+}

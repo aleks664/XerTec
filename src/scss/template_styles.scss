@@ -1,0 +1,96 @@
+// include normalize
+@import "partials/normalize";
+// include fonts
+@import "partials/fonts";
+// include sprite
+@import "partials/sprite";
+// include variables
+@import "partials/variables";
+// include functions
+@import "partials/functions";
+// include mixin
+@import "partials/mixin";
+
+
+/* icons
+-----------------------------*/
+@import "partials/icon";
+/* base
+-----------------------------*/
+@import "partials/base";
+/* base
+-----------------------------*/
+@import "../../bower_components/fancybox/dist/fancybox.scss";
+@import "../../bower_components/slick-carousel/slick/slick.scss";
+/* base button
+-----------------------------*/
+@import "partials/button";
+/* base forms
+-----------------------------*/
+@import "partials/forms";
+/* header
+-----------------------------*/
+@import "blocks/header";
+/* footer
+-----------------------------*/
+@import "blocks/footer";
+/* main banner
+-----------------------------*/
+@import "blocks/main-banner";
+/* instruction-container
+-----------------------------*/
+@import "blocks/instruction-container";
+/*  info-section
+-----------------------------*/
+@import "blocks/info-section";
+/*  bottom-nav
+-----------------------------*/
+@import "blocks/bottom-nav";
+/*  popup
+-----------------------------*/
+@import "blocks/popup";
+/*  breadcrumbs
+-----------------------------*/
+@import "blocks/breadcrumbs";
+/*  object-selection
+-----------------------------*/
+@import "blocks/object-selection";
+/*  registration-container
+-----------------------------*/
+@import "blocks/registration-container";
+/*  registration-container
+-----------------------------*/
+@import "blocks/user-sidebar";
+/*  control-container
+-----------------------------*/
+@import "blocks/control-container";
+/* pagination
+-----------------------------*/
+@import "blocks/pagination";
+/* sidebar
+-----------------------------*/
+@import "blocks/sidebar";
+/* contacts-container
+-----------------------------*/
+@import "blocks/contacts-container";
+/* navigate in shop
+-----------------------------*/
+@import "blocks/nav-shop";
+/* shop-banner
+-----------------------------*/
+@import "blocks/shop-banner";
+/* our-offer-container
+-----------------------------*/
+@import "blocks/our-offer-container";
+/* product-preview
+-----------------------------*/
+@import "blocks/product-preview";
+/* news-list
+-----------------------------*/
+@import "blocks/news-list";
+/* about-container
+-----------------------------*/
+@import "blocks/about-container";
+/* product-detail
+-----------------------------*/
+@import "blocks/product-detail";

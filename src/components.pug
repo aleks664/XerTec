@@ -1,0 +1,110 @@
+extends templates/base/base.pug
+append vars
+  - var pageId = 0;
+  - var pageTitle = 'Components page';
+
+
+block content
+  <div class="wrapper">
+  h1 Pages
+  ol
+    li
+      a(href="index.html", target="_blank") main
+    li
+      a(href="object-selection.html", target="_blank") object
+    li
+      a(href="registration.html", target="_blank") registration
+    li
+      a(href="registration2.html", target="_blank") registration step 2
+    li
+      a(href="registration3.html", target="_blank") registration step 3
+    li
+      a(href="control.html", target="_blank") control
+    li
+      a(href="text-page.html", target="_blank") Text page
+    li
+      a(href="contacts.html", target="_blank") Contacts
+    li
+      a(href="Online-Shop.html", target="_blank") Online-Shop
+    li
+      a(href="product-detail.html", target="_blank") Product Detail
+
+
+  h1 header h1
+  h2 header h2
+  h3 header h3
+  h4 header h4
+  h5 header h5
+  h6 header h6
+
+  h1 forms
+  p class .required для наблюдения за обязательными полями
+  form
+    .forms-errors.red.text-center forms-errors
+    +formGroup('username-examle', 'text', 'Name').required( data-error="Заполните поле  Name")
+    +formGroup('usernamelast-examle', 'text', 'Last Name').required( data-error="Заполните поле  Last Name")
+    +formGroup('userphone-examle', 'text', 'Mobiltelefonnummer').required.maskphone( data-error="Заполните поле   Mobiltelefonnummer")
+    +formGroup('useremail-examle', 'email', 'Email').required( data-error="Заполните поле  Email")
+    +formGroup('userpassword-examle', 'password', 'Passwort').required( data-error="Пароль должен быть не менее 6 символов")
+
+    +textarea('usermessage-examle: ', 'Message').required( data-error="Заполните поле Message", rows="10")
+    .form-group
+      +checkbox('checkox-examle','Angaben speichern').required( data-error="Заполните поле Angaben speichern", rows="10")
+    .form-group
+      +radio('radio-examle1','radio-examle', 'radio-examle')(data-href="#tab3", checked)
+      +radio('radio-examle2','radio-examle', 'radio-examle')(data-href="#tab3")
+      +radio('radio-examle3','radio-examle', 'radio-examle')(data-href="#tab3")
+      +radio('radio-4','radio-examle', 'radio-examle')(data-href="#tab3")
+    .text-center.form-group
+      button.btn btn
+  form
+    .forms-errors.red.text-center forms-errors
+    +formGroup('username-examle-33', 'text', 'Name').required( data-error="Заполните поле  Name")
+    +formGroup('usernamelast-examle-33', 'text', 'Last Name')( data-error="Заполните поле  Last Name")
+    +formGroup('userphone-examle-33', 'text', 'Mobiltelefonnummer').maskphone( data-error="Заполните поле   Mobiltelefonnummer")
+    +formGroup('useremail-examle-33', 'email', 'Email')(data-error="Заполните поле  Email")
+    +formGroup('userpassword-examle-33', 'password', 'Passwort')( data-error="Пароль должен быть не менее 6 символов")
+
+    +textarea('usermessage-examle-33: ', 'Message')( data-error="Заполните поле Message", rows="10")
+    .form-group
+      +checkbox('checkox-examle-33','Angaben speichern')( data-error="Заполните поле Angaben speichern", rows="10")
+    .form-group
+      +radio('radio-examle1-33','radio-examle', 'radio-examle')(data-href="#tab3",checked)
+      +radio('radio-examle2-33','radio-examle', 'radio-examle')(data-href="#tab3")
+      +radio('radio-examle3-33','radio-examle', 'radio-examle')(data-href="#tab3")
+      +radio('radio-4-33','radio-examle', 'radio-examle')(data-href="#tab3")
+    .text-center.form-group
+      button.btn btn
+  .head-border.text-center
+    .title.h1.bold header
+    div.sub-title sub-title
+  h1 Buttons
+  a(href="#").btn.btn-green btn.btn-green
+  br
+  br
+  a(href="#").btn.btn-full.btn-lg.btn-green.bold btn btn-full btn-green btn-lg
+  br
+  br
+  a(href="#").btn btn
+  br
+  br
+  a(href="#").btn.btn-full btn btn-full
+  br
+  br
+  a(href="#").btn.bold btn.bold
+  br
+  br
+  a(href="#").btn.btn-full.bold btn btn-full.bold
+  p.italic Text TextText Text Text Text Text Text Text Text Text Text Text Text TextText Text Text Text Text Text Text Text Text Text Text Text TextText Text Text Text Text Text Text Text Text Text Text Text Text
+  p.bold.italic Text TextText Text Text Text Text Text Text Text Text Text Text Text TextText Text Text Text Text Text Text Text Text Text Text Text TextText Text Text Text Text Text Text Text Text Text Text Text Text
+  p.bold  Text TextText Text Text Text Text Text Text Text Text Text Text Text TextText Text Text Text Text Text Text Text Text Text Text Text TextText Text Text Text Text Text Text Text Text Text Text Text Text
+  pText TextText Text Text Text Text Text Text Text Text Text Text Text TextText Text Text Text Text Text Text Text Text Text Text Text TextText Text Text Text Text Text Text Text Text Text Text Text Text
+  p
+    a(href="#") Link
+  h1.upper instruction-container
+  include templates/blocks/instruction-container.pug
+
+  </div>
+block scripts
+
+

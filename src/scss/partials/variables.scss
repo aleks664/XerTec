@@ -1,0 +1,54 @@
+// Контрольные точки;
+$breakpointsPhone:             400px;
+$breakpointsPhoneWide:         480px;
+$breakpointsPhablet:           540px;
+$breakpointsTabletSmall:       640px;
+$breakpointsTablet:            768px;
+$breakpointsTabletWide:        992px;
+$breakpointsDesktop:           1200px;
+$breakpointsDesktopWideMd:     1400px;
+$breakpointsDesktopWide:       1600px;
+
+$breakpoints: (
+  "phone":        $breakpointsPhone,
+  "phone-wide":   $breakpointsPhoneWide,
+  "phablet":      $breakpointsPhablet,
+  "tablet-small": $breakpointsTabletSmall,
+  "tablet":       $breakpointsTablet,
+  "tablet-wide":  $breakpointsTabletWide,
+  "desktop":      $breakpointsDesktop,
+  "desktop-wide-md":      $breakpointsDesktopWideMd,
+  "desktop-wide": $breakpointsDesktopWide
+);
+
+
+// Шрифты на сайте
+$GothamPro:  'Gotham Pro', sans-serif;
+
+// Цвета на сайте
+
+$white: #FFF;
+$wet-asphalt: #4b4b4b;
+$GraphiteBlack: #1d1d1d;
+$blue: #008acf;
+$bluelight: #0688C6;
+$blueDark: #005F8F;
+$blueSuperLight: #F1F7FC;
+$red: #FF0000;
+
+$baseFontSize: 18px !default;
+$baseLineHeight: 29px !default;
+$baseFontWeight: 400;
+$baseFontStyle: normal;
+$baseFontFamily: $GothamPro;
+$baseFontColor: $wet-asphalt;
+$baseBg: $white;
+
+$contentWidth: 1210px;
+$contentWidthPadding: 0 15px;
+
+$baseLinkColor: $blue;
+$baseLinkColorHover: $blueDark;
+
+
+

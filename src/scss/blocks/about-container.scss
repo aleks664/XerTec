@@ -1,0 +1,58 @@
+.about-container {
+  padding: 55px 0 0;
+  @include mq('tablet') {
+    padding: 25px 0 0;
+  }
+  .title {
+    margin: 0 0 30px;
+    @include mq('tablet') {
+      margin: 0 0 15px;
+    }
+  }
+  .row {
+    .column {
+      width: 100%;
+      padding: 0 15px;
+      overflow: hidden;
+      @include mq('tablet', min) {
+        width: 50%;
+      }
+    }
+  }
+  .desc {
+    font-size: 14px;
+    line-height: 24px;
+    @include mq('tablet') {
+      padding-top: 10px;
+    }
+  }
+  .numbers {
+    overflow: hidden;
+    margin: 0 -25px;
+    display: flex;
+    flex-flow: row wrap;
+    .itm {
+      margin-top: 35px;
+      margin-bottom: 15px;
+      float: left;
+      width: 25%;
+      padding: 0 25px;
+      border-left: 1px solid #E4E4E4;
+      font-size: 14px;
+      line-height: 24px;
+      @include mq('desktop') {
+        width: 50%;
+      }
+      .num {
+        font-size: 34px;
+        line-height: 37px;
+        color: $blue;
+        margin: -35px 0 10px;
+        text-align: center;
+      }
+      &:first-child {
+        border-left: none;
+      }
+    }
+  }
+}

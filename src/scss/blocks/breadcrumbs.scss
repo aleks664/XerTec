@@ -1,0 +1,59 @@
+.breadcrumbs {
+  margin-bottom: 25px;
+  @include mq('tablet') {
+    margin-bottom: 15px;
+  }
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    li {
+      float: left;
+      position: relative;
+      margin-left: 25px;
+      &:after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: -15px;
+        width: 0;
+        height: 0;
+        border: 5px solid transparent;
+        border-right: none;
+        border-left:  6px solid #E3F0FB;
+        margin-top: -5px;
+      }
+      &:first-child {
+        margin-left: 0;
+        &:after {
+          display: none;
+        }
+      }
+      >span,
+      >a {
+        display: block;
+        font-size: 14px;
+        line-height: 18px;
+        border: none;
+        color: #000;
+        background: #F1F7FC;
+        padding: 5px 10px;
+        span {
+          border-bottom: 1px solid ;
+        }
+        &:hover {
+          background: $blueDark;
+          color: $white;
+        }
+      }
+      >span {
+        background: #F8FBFD;
+        color: #949494;
+        &:hover {
+          background: #F8FBFD;
+          color: #949494;
+        }
+      }
+    }
+  }
+}

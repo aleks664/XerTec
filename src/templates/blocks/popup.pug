@@ -1,0 +1,47 @@
+// start popup-login
+.popup.popup-login#popup-login
+  .tabs-wrap
+    .tab#tab1.active
+      .title.text-center.bold Ich habe bereits ein Konto
+      form
+        .forms-errors.red.text-center forms-errors
+        .row
+          .column.left
+            +formGroup('userphoneF', 'text', 'Mobiltelefonnummer').required.maskphone( data-error="Заполните поле Mobiltelefonnummer")
+          .column.left
+            +formGroup('userpassword', 'password', 'Passwort').required( data-error="Пароль должен быть не менее 6 символов")
+              .column.left
+        .login-btm.text-center
+          .remember.left
+            +checkbox('remember','Angaben speichern').required( data-error="Заполните поле Angaben speichern")
+          button.btn.bold Anmelden
+          .right.tablnk
+            a(href="#tab2") Passwort vergessen?
+      .text-center
+        |Neu bei XerTec?
+        br
+        a(href="#") Erstellen sie Ihr XerTec-konto
+    .tab#tab2
+      .title.text-center.bold Passworthilfe
+      p.text-center Geben Sie die E-Mail-Adresse oder Mobiltelefonnummer ein, die mit Ihrem  #[br] XerTec-Konto verbunden ist.
+      p.text-center Methode der Wiederherstellung
+      form
+        .forms-errors.red.text-center forms-errors
+        .form-group.text-center.radio-wrap
+          // в инпутах radio id не менять
+          +radio('radio1','radio', 'per Email')(data-href="#tab3")
+          +radio('radio2','radio', 'per Telefonnummer')(checked, data-href="#tab4")
+        .form-group
+          .tabs-wrap
+            .tab#tab3
+              // Здесь required у того таба который по умолчанию
+              +formGroup('useremail', 'email', 'Email')( data-error="Заполните поле  Email")
+            .tab#tab4.active
+              +formGroup('userphone', 'text', 'Mobiltelefonnummer').maskphone.required( data-error="Заполните поле  Mobiltelefonnummer")
+        .form-group.text-center
+          img(src="images/capcha.png", alt="")
+        .text-center.btm
+          button.btn.bold Anfrage bestätigen
+          .right.login.tablnk
+            a(href="#tab1") Login
+// end popup-login

@@ -1,0 +1,38 @@
+extends templates/base/base.pug
+append vars
+  - var pageUrl = 'registration.html';
+  - var pageTitle = 'Registrierung';
+
+
+block content
+  .wrapper
+    .registration-container
+      .head-border.text-center
+        h1.title Registrierung
+        .sub-title text text text
+      .steps
+        ul
+          li.active
+            div
+              span 1
+          li.active
+            div
+              span 2
+          li
+            div
+              span 3
+      form
+        .title.text-center.bold Bestätigungscode
+        .forms-errors.red.text-center forms-errors
+        .row
+          .column.colunn-full
+            +formGroup('userphone-registration', 'text', 'Mobiltelefonnummer').required( data-error="Заполните поле   Mobiltelefonnummer", value="6752421786")
+        .btm.text-center
+          button.btn Weiter
+          .login SMS nicht erhalten?
+            =' '
+            a(href="#") Erneut senden
+block scripts
+
+
+

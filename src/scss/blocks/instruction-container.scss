@@ -1,0 +1,213 @@
+.instruction-container {
+  padding: 70px 0 135px;
+  @include mq('tablet-wide') {
+    padding: 50px 0;
+  }
+  @include mq('tablet') {
+    padding: 40px 0;
+  }
+  .row {
+    @include mq('phone-wide', min) {
+      display: flex;
+      flex-flow: row wrap;
+      .item {
+        display: flex;
+      }
+    }
+    .item {
+      width: 100%;
+      padding: 15px;
+      @include mq('tablet', min) {
+        width: 100/2+%;
+      }
+      @include mq('tablet-wide', min) {
+        width: 100/4+%;
+      }
+      .border-top,
+      .border-right,
+      .border-bottom,
+      .border-left {
+        position: absolute;
+        box-sizing: content-box;
+        background: $blue;
+      }
+      .border-top {
+        width: 0;
+        height: 6px;
+        padding: 0;
+        left: -6px;
+        top: -6px;
+      }
+      .border-right {
+        width: 6px;
+        height: 0;
+        padding: 0;
+        right: -6px;
+        top: -6px;
+      }
+      .border-bottom {
+        width: 0;
+        height: 6px;
+        padding: 0;
+        right: -6px;
+        bottom: -6px;
+      }
+      .border-left {
+        width: 6px;
+        height: 0;
+        padding: 0;
+        left: -6px;
+        bottom: -6px;
+      }
+      &:first-child:hover {
+        $time: 0.3s;
+        .border-top {
+          animation: width $time ease both;
+        }
+        .border-right {
+          animation:  height $time $time ease both;
+        }
+        .border-bottom {
+          animation: width $time ease both;
+        }
+        .border-left {
+          animation:  height $time $time ease both;
+        }
+        .box .num span {
+          animation:  color $time $time*2  ease both;
+        }
+      }
+      &:nth-child(4),
+      &:nth-child(2) {
+        .border-top {
+          right: -6px;
+          left: auto;
+        }
+        .border-left {
+          top: -6px;
+          bottom: auto;
+        }
+        .border-bottom {
+          left: -6px;
+          right: auto;
+        }
+        .border-right {
+          top: auto;
+          bottom: -6px;
+        }
+      }
+      &:nth-child(4):hover,
+      &:nth-child(2):hover {
+        $time: 0.3s;
+        .border-top {
+          animation: width 0.4s ease both;
+        }
+        .border-left {
+          animation: height 0.3s 0.4s ease both;
+        }
+        .border-bottom {
+          animation: width 0.25s 0.7s ease both;
+        }
+        .border-right {
+          animation: height  0.2s 0.95s ease both;
+        }
+        .box .num span {
+          animation: color  $time/2 $time*4 ease-in both;
+        }
+      }
+      &:nth-child(3):hover {
+        $time: 0.3s;
+        .border-left {
+          animation:  height $time ease both;
+        }
+        .border-bottom {
+          animation: width $time $time ease both;
+        }
+        .border-right {
+          animation:  height $time ease both;
+        }
+        .border-top {
+          animation: width $time $time ease both;
+        }
+        .box .num span {
+          animation:  color $time $time*2  ease both;
+        }
+      }
+      &:nth-child(4) {
+        .box {
+          border-color: #D4F1D5;
+          .border-top,
+          .border-right,
+          .border-bottom,
+          .border-left {
+            background-color: #27BA2E;
+          }
+        }
+      }
+      .box {
+        width: 100%;
+        max-width: 280px;
+        margin: 0 auto;
+        font-size: 13px;
+        line-height: 17px;
+        padding: 45px 15px 15px;
+        position: relative;
+        border: 6px solid #F3F7FC;
+        .icon-wrap {
+          margin: 0 0 30px;
+          .icon {
+            display: block;
+            margin: 0 auto;
+          }
+        }
+        .num {
+          position: absolute;
+          padding: 0 0 20px 10px;
+          right: -6px;
+          top: -6px;
+          background: #FFF;
+          font-size: 30px;
+          line-height: 33px;
+          font-weight: 900;
+          color: $blue;
+          span {
+            opacity: 0.2;
+          }
+        }
+        .ttl {
+          font-size: 17px;
+          line-height: 20px;
+          margin: 0 0 20px;
+        }
+      }
+    }
+  }
+}
+@keyframes width  {
+  from {
+    width: 0%;
+    padding: 0;
+  }
+  to {
+    width: 100%;
+    padding: 0 6px;
+  }
+}
+@keyframes height  {
+  from {
+    height: 0%;
+    padding: 0;
+  }
+  to {
+    height: 100%;
+    padding: 6px 0;
+  }
+}
+@keyframes color  {
+  from {
+    opacity: 0.2;
+  }
+  to {
+    opacity: 1;
+  }
+}

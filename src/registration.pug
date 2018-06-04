@@ -1,0 +1,41 @@
+extends templates/base/base.pug
+append vars
+  - var pageUrl = 'registration.html';
+  - var pageTitle = 'Registrierung';
+
+
+block content
+  .wrapper
+    .registration-container
+      .head-border.text-center
+        h1.title Registrierung
+        .sub-title text text text
+      .steps
+        ul
+          li.active
+            div
+              span 1
+          li
+            div
+              span 2
+          li
+            div
+              span 3
+      form
+        .title.text-center.bold Kontaktdaten
+        .forms-errors.red.text-center forms-errors
+        .row
+          .column.left
+            +formGroup('userphone-registration', 'text', 'Mobiltelefonnummer').required.maskphone( data-error="Заполните поле   Mobiltelefonnummer")
+          .column.left
+            +formGroup('username-registration', 'text', 'Vorname Nachname').required( data-error="Заполните поле   Mobiltelefonnummer")
+        .form-group.text-center
+          img(src="images/capcha.png", alt="")
+        .btm.text-center
+          button.btn Weiter
+          .login
+            a(href="#popup-login", data-fancybox) Zurück zum Login
+block scripts
+
+
+

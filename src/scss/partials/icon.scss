@@ -1,0 +1,144 @@
+i.icon {
+  display: inline-block;
+  position: relative;
+  font-style: normal;
+  background-repeat: no-repeat;
+}
+.icon_marker {
+ @include sprite($marker);
+}
+.icon_house {
+ @include sprite($house);
+}
+.icon_inst-3 {
+ @include sprite($inst-3);
+}
+.icon_doc {
+ @include sprite($doc);
+}
+.icon_phone-white {
+ @include sprite($phone-white);
+}
+.icon_object {
+ @include sprite($object);
+}
+.icon_setting {
+ @include sprite($setting);
+}
+.icon_user {
+ @include sprite($user);
+}
+.icon_arrow-right {
+ @include sprite($arrow-right);
+}
+.icon_checked-blue {
+ @include sprite($checked-blue);
+}
+.icon_close {
+ @include sprite($close);
+}
+.icon_phone-blue {
+ @include sprite($phone-blue);
+}
+.icon_house-gray-small {
+ @include sprite($house-gray-small);
+}
+.icon_setting-gray-small {
+ @include sprite($setting-gray-small);
+}
+.icon_house-blue-small {
+ @include sprite($house-blue-small);
+}
+.icon_setting-blue-small {
+ @include sprite($setting-blue-small);
+}
+.icon_profile-ava {
+ @include sprite($profile-ava);
+}
+.icon_eye {
+ @include sprite($eye);
+}
+.icon_eye-blue {
+ @include sprite($eye-blue);
+}
+.icon_user-black {
+ @include sprite($user-black);
+}
+.icon_user-blue {
+ @include sprite($user-blue);
+}
+.icon_castle {
+ @include sprite($castle);
+}
+.icon_castle-blue {
+ @include sprite($castle-blue);
+}
+.icon_burger {
+ @include sprite($burger);
+}
+.icon_status {
+ @include sprite($status);
+}
+.icon_place {
+ @include sprite($place);
+}
+.icon_place2 {
+ @include sprite($place2);
+}
+.icon_bell {
+ @include sprite($bell);
+}
+.icon_clock {
+ @include sprite($clock);
+}
+.icon_purse {
+ @include sprite($purse);
+}
+.icon_doc-gray {
+ @include sprite($doc-gray);
+}
+.icon_doc3 {
+ @include sprite($doc3);
+}
+.icon_phone-dark {
+ @include sprite($phone-dark);
+}
+.icon_object-small-blue {
+ @include sprite($object-small-blue);
+}
+.icon_object-small {
+ @include sprite($object-small);
+}
+.icon_setting-small {
+ @include sprite($setting-small);
+}
+.icon_setting-small-gray {
+ @include sprite($setting-small-gray);
+}
+.icon_glasses {
+ @include sprite($glasses);
+}
+.icon_checked-green {
+ @include sprite($checked-green);
+}
+.icon_arrow-down {
+ @include sprite($arrow-down);
+}
+.icon_arrow-down-blue {
+ @include sprite($arrow-down-blue);
+}
+.icon_like {
+ @include sprite($like);
+}
+.icon_car {
+ @include sprite($car);
+}
+.icon_arrow-right-blue {
+ @include sprite($arrow-right-blue);
+}
+.icon_arrow-left {
+ @include sprite($arrow-left);
+}
+.icon_arrow-right-black {
+ @include sprite($arrow-right-black);
+}

@@ -1,0 +1,69 @@
+extends templates/base/base.pug
+append vars
+  - var pageUrl = 'contacts.html';
+  - var pageTitle = 'Contacts';
+
+block content
+  +breadcrumbs('Kontakt', 'XerTec.ch')
+  .wrapper
+    .main-column-wrap
+      .column.column-left-small
+        include templates/blocks/sidebar.pug
+      .column
+        .contacts-container
+          h1 Kontakt
+          p Stellen Sie uns lhre Fragen direkt am Telefon oder schicken Sie uns ein Email!
+            |Wir helfen lhnen gerne weiter.
+          .box-blue
+            .support
+              .ttl Support Line
+              .phone.bold +41 41 312 01 01
+              p Sagen Sie uns, wie sir lhnen helfen können, indem Sie die nachfolgenden Abschnitte ausfüllen:
+              form
+                .forms-errors.red.text-center forms-errors
+                .row
+                  .column.left
+                    +formGroup('username-contacts', 'text', 'lhr Name').required(data-error="Заполните поле  Name")
+                  .column.left
+                    +formGroup('useremail-contacts', 'email', 'lhre Email:').required(data-error="Заполните поле  Email")
+                +formGroup('userremail-contacts', 'email', 'lhre Email:')(data-error="Заполните поле  Email")
+                +textarea('usermessage-contacts: ', 'Wie können wir lhnen helfen?:')(data-error="", rows="4")
+                .btn-wrap.text-center
+                  .capcha-wrap
+                    img(src="images/capcha.png", alt="")
+                  button.btn.bold Email verschicken
+          include templates/blocks/map.html
+          .tbl.contacts-info
+            .tbc
+              .ttl.bold Kontaktadresse
+              |XerTec GmbH
+              br
+              |Hochrainstrasse 17
+              br
+              |6010 Kriens
+              br
+              |Schweiz
+            .tbc
+              .ttl.bold Service und Störungsdienst
+              | Montag bis Freitag von 07.00 bis 20.00 Uhr
+              br
+              | Email:
+              =' '
+              a(href="mailto:info@xertec.ch") info@xertec.ch
+              br
+              | Telefon:
+              =' '
+              a(href="tel:+41413120101") +41 41 312 01 01
+            .tbc
+              .ttl Technischer Support
+                |Email:
+                =' '
+                a(href="mailto:admin@xertec.ch") admin@xertec.ch
+                br
+                |Handy:
+                =' '
+                a(href="tel:+41784011968") +41 78 401 19 68
+
+block scripts
+
+

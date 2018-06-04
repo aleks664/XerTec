@@ -1,0 +1,274 @@
+.main-banner {
+  background: url('../images/main-banner.png') center bottom no-repeat;
+  background-size: cover;
+  font-size: 16px;
+  line-height: 22px;
+  padding: 134px 0 100px;
+  @include mq('tablet-wide', min) {
+    padding: 158px 0 100px;
+  }
+  @include mq('tablet') {
+    padding: 100px 0 50px;
+  }
+  .row {
+    @include mq('tablet', min) {
+      display: flex;
+      flex-flow: row wrap;
+      margin: 0;
+    }
+
+    .column {
+      background-color: #333234;
+      padding: 35px 15px;
+      @include mq('tablet-wide',min) {
+        padding: 35px;
+      }
+      @include mq('tablet') {
+        width: 100%;
+        padding: 15px;
+      }
+      &:first-child {
+        padding: 0;
+        background-color: #EFEFF0;
+      }
+      @include mq('tablet', min) {
+        width: 50%;
+        display: flex;
+        flex-flow: row wrap;
+        align-items: center;
+        justify-content: center;
+      }
+      .form {
+        background-color: #EFEFF0;
+        width: 100%;
+        padding: 35px 15px;
+        @include mq('tablet-wide',min) {
+          padding: 35px;
+        }
+        @include mq('tablet') {
+          padding: 15px;
+        }
+        .inner {
+          max-width: 440px;
+          margin: 0 auto;
+        }
+        .order-type {
+          margin: 80px auto 0;
+          .row {
+            display: flex;
+            flex-flow: row wrap;
+            @include mq('tablet-wide') {
+              margin: 0 -3px;
+            }
+          }
+          .item {
+            width: 50%;
+            float: left;
+            padding: 0 15px;
+            display: flex;
+            cursor: pointer;
+            @include mq('tablet-wide') {
+              padding: 0 3px;
+            }
+          }
+          .box-border {
+            border: 4px solid #E3E3E3;
+            border-bottom: none;
+            border-top: none;
+            position: relative;
+            padding: 35px 10px 13px;
+            position: relative;
+            width: 100%;
+            @include mq('tablet') {
+              padding: 35px 5px 10px;
+            }
+            .top {
+              height: 40px;
+              position: absolute;
+              width: 100%;
+              left: 0;
+              top: -21px;
+              overflow: hidden;
+              .icon-wrap {
+                display: inline-block;
+                vertical-align: middle;
+                padding: 0 10px;
+                position: relative;
+                &:after,
+                &:before {
+                  content: '';
+                  @include transition();
+                  width: 10000px;
+                  height: 4px;
+                  position: absolute;
+                  top: 50%;
+                  margin-top: -2px;
+                  background-color: #E3E3E3;
+                  left: 100%;
+                }
+                &:before {
+                  right: 100%;
+                  left: auto;
+                }
+              }
+            }
+            .ttl {
+              font-size: 16px;
+              line-height: 19px;
+              color: #979797;
+              @include mq('phone-wide') {
+                font-size: 14px;
+                line-height: 17px;
+              }
+            }
+            .txt {
+              font-size: 12px;
+              line-height: 15px;
+              color: #797979;
+              width: 100%;
+              bottom: 100%;
+              position: absolute;
+              left: 0;
+              margin-bottom: 30px;
+              @include transition();
+              opacity: 0;
+              visibility: hidden;
+              @include mq('phone-wide') {
+                font-size: 10px;
+                line-height: 13px;
+              }
+            }
+          }
+          .item {
+            &:hover,
+            &.active {
+              .box-border {
+                border-color: #dae9fe;
+                .top {
+                  .icon-wrap {
+                    &:after,
+                    &:before {
+                      background-color: #dae9fe;
+                    }
+                    .icon_setting-small-gray {
+                      @include sprite($setting-small);
+                    }
+                    .icon_object-small {
+                      @include sprite($object-small-blue);
+                    }
+                  }
+                }
+                .ttl {
+                  color: #1d1d1d;
+                }
+                .txt {
+                  visibility: visible;
+                  opacity: 1;
+                }
+              }
+            }
+          }
+        }
+
+        .input-wrap {
+          position: relative;
+          margin-bottom: 25px;
+          @include mq('tablet') {
+            margin-bottom: 15px;
+          }
+          input[type="text"] {
+            width: 100%;
+            font-size: 16px;
+            line-height: 22px;
+            padding: 15px 25px;
+            border: 1px solid #EAEAEA;
+            color: #4e4e4e;
+          }
+        }
+        a.lnk {
+          font-size: 16px;
+          line-height: 19px;
+          margin-top: 25px;
+          color: #a5a5a5;
+          display: inline-block;
+          @include mq('tablet') {
+            margin-top: 15px;
+          }
+        }
+        .search-autocomplete {
+          position: absolute;
+          top: 100%;
+          left: 0;
+          width: 100%;
+          padding-top: 20px;
+          visibility: hidden;
+          z-index: -1000;
+          opacity: 0;
+          @include mq('tablet') {
+            padding-top: 0;
+
+          }
+          @include transition();
+          &.open {
+            opacity: 1;
+            visibility: visible;
+            z-index: 100;
+          }
+          &:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 0;
+            border: 10px solid transparent;
+            border-bottom: 11px solid #F0F0F1;
+            border-top: none;
+            top: 9px;
+            left: 25px;
+          }
+          .inner {
+            position: relative;
+            background: #F0F0F1;
+            padding: 25px 25px;
+            width: 100%;
+            overflow-x: hidden;
+            overflow-y: auto;
+            font-size: 18px;
+            line-height: 22px;
+            max-height: 150px;
+            ul {
+              margin: 0;
+              padding: 0;
+              list-style-type: none;
+              li {
+                padding: 5px 0;
+                text-align: left;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .descirpiton {
+    font-size: 18px;
+    line-height: 29px;
+    width: 100%;
+    color: #FFF;
+    @include mq('tablet') {
+      font-size: 14px;
+      line-height: 17px;
+    }
+    .head-border {
+      color: inherit;
+      * {
+        color: inherit;
+      }
+    }
+    .txt {
+      margin: 30px 0;
+      @include mq('tablet') {
+        margin: 15px 0;
+      }
+    }
+  }
+}

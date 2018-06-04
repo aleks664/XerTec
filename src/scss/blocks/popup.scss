@@ -1,0 +1,126 @@
+.popup {
+  display: none;
+  width: 820px;
+  font-family: $baseFontFamily;
+  color: $baseFontColor;
+  font-size: $baseFontSize;
+  line-height: $baseLineHeight;
+  font-weight: $baseFontWeight;
+  font-style: $baseFontStyle;
+  padding: 55px 55px 20px;
+  @include mq('tablet') {
+    font-size: 16px;
+    line-height: 26px;
+  }
+  @include mq('tablet-wide') {
+    width: 700px;
+    padding: 30px 20px;
+
+  }
+  @include mq('tablet') {
+    width: 400px;
+    padding: 30px 15px 20px;
+  }
+  @include mq('phone-wide') {
+    width: 280px;
+    padding: 20px 15px 15px;
+  }
+  .title {
+    font-size: 24px;
+    line-height: 27px;
+    margin: 0 0 35px;
+    color: $GraphiteBlack;
+    @include mq('tablet') {
+      margin-bottom: 15px;
+    }
+  }
+  .tabs-wrap {
+    position: relative;
+    .tab {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: -100;
+      opacity: 0;
+      visibility: hidden;
+      @include transition();
+      &.active {
+        position: relative;
+        opacity: 1;
+        visibility: visible;
+        z-index: auto;
+      }
+    }
+  }
+  &.popup-login {
+    .remember {
+      margin: 13px 0;
+    }
+    .radio-wrap {
+      label {
+        margin: 0 5px;
+      }
+    }
+    .tablnk {
+      margin: 13px 0;
+    }
+    .text-center.btm {
+      position: relative;
+      .login {
+        position: absolute;
+        right: 0;
+        top: 0;
+        @include mq('tablet') {
+          float: none;
+          position: static;
+        }
+      }
+    }
+    .login-btm {
+      margin-bottom: 34px;
+      @include mq('tablet') {
+        .right,
+        .left {
+          float: none;
+        }
+
+      }
+    }
+    .row {
+      .column {
+        padding: 0 15px;
+        width: 100%;
+        @include mq('tablet', min) {
+          width: 50%;
+          padding:  0 15px;
+        }
+      }
+    }
+  }
+}
+.fancybox-slide>* {
+  overflow: visible;
+}
+.fancybox-close-small {
+  &:after {
+    content: '';
+    @include sprite($close);
+    top: 30px;
+    right: 20px;
+    @include mq('tablet') {
+      top: 15px;
+      right: 15px;
+    }
+    @include mq('phone-wide') {
+      top: 5px;
+      right: 5px;
+    }
+  }
+  &:hover {
+    &:after {
+      background-color: transparent;
+      @include sprite($close-blue);
+    }
+  }
+}

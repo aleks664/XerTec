@@ -1,0 +1,68 @@
+extends templates/base/base.pug
+append vars
+ - var pageUrl = 'index.html';
+ - var pageTitle = 'Main';
+
+
+block content
+  include templates/blocks/main-banner.pug
+  include templates/blocks/instruction-container.pug
+  // start info-section
+  section.info-section
+    .pict-wrap(style="background: url(images/section-info1.jpg) center center no-repeat; background-size: cover; ")
+      img(src="images/man1.png", alt="")
+    .wrapper
+      .row
+        .column.right
+          .text
+            h2.title Bautrocknung #[br] war noch nie so einfach
+            p Unsere Kernkompetenz liegt in den Dienstleistungen  Bautrocknung, Kellertrocknung und Waschkücheneinrichtung.
+
+            p Unser Ziel ist es einen möglichst hohen Kundennutzen zu  erzeugen. Um dies zu garantieren, stellen wir dem Kunden   diverse Werkzeuge auf unserer Website zur Verfügung.
+  // end info-section
+  // start info-section
+  section.info-section
+    .pict-wrap.right(style="background: url(images/section-info2.jpg) center center no-repeat; background-size: cover; ")
+      img(src="images/man2.png", alt="")
+    .wrapper
+      .row
+        .column.left
+          .text
+            h2.title Sie bestimmen, #[br] wir informieren
+            p Dabei setzen wir auf modernste Systeme und Technik um die
+              |Reaktionszeit auf ein Minimum zu beschränken (ein Richtpreis ist
+              |sofort verfügbar und ein verbindliches Angebot erhalten sie
+              |spätestens nach 48h per E-Mail).
+
+
+
+
+            p Im Falle eines Auftrags werden Sie von uns bei allen wichtigen
+              |Arbeitsschritten per SMS und/oder E-Mail benachrichtigt. Somit
+              |stellen wir sicher, dass nichts vergessen geht und Sie ihr Projekt
+              |ohne Verzögerungen realisieren können.
+  // end info-section
+  // start info-section
+  section.info-section
+    .pict-wrap(style="background: url(images/section-info3.jpg) center center no-repeat; background-size: cover; ")
+      img(src="images/man3.png", alt="")
+    .wrapper
+      .row
+        .column.right
+          .text
+            h2.title Höchste #[br] Kundenzufriedenheit
+            p Um dies sicherzustellen kommen bei XerTec nur bestens
+              |aausgebildete Fachkräfte zum Einsatz. Diese arbeiten nach
+              |astandardisierten Prozessen und stellen mithilfe modernster
+
+            p Messtechnik die vom Kunden geforderte Qualität sicher.
+              |aMessprotokolle werden systematisch erstellt und können auf
+              |aWunsch bezogen werden. Durch unsere zentrale Lage
+              |agarantieren wir höchste Flexibilität. In den spezifizierten
+              |aGebieten sind wir nach kürzester Zeit vor Ort.
+  // end info-section
+  include templates/blocks/bottom-nav.pug
+
+block scripts
+
+

@@ -1,0 +1,24 @@
+.product-preview {
+  position: relative;
+  .pict {
+    border: 1px solid #E0E0E0;
+    border-bottom: none;
+    img {
+      display: block;
+      max-width: 100%;
+      margin: 0 auto;
+    }
+  }
+  .txt {
+    font-size: 13px;
+    line-height: 20px;
+    margin-top: 15px;
+    color: #3b3b3b;
+  }
+  &:hover {
+    .btn {
+      background: $blueDark;
+      color: #FFF;
+    }
+  }
+}

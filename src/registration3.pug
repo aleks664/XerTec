@@ -1,0 +1,54 @@
+extends templates/base/base.pug
+append vars
+  - var pageUrl = 'registration3.html';
+  - var pageTitle = 'Registrierung';
+
+
+block content
+  .wrapper
+    .registration-container
+      .head-border.text-center
+        h1.title Registrierung
+        .sub-title text text text
+      .steps
+        ul
+          li.active
+            div
+              span 1
+          li.active
+            div
+              span 2
+          li.active
+            div
+              span 3
+      form
+        .title.text-center.bold Weitere Informationen
+        .forms-errors.red.text-center forms-errors
+        .row
+          .column.left
+            // здесь в data-error подели текст на две части
+            +formGroup('userpassword-registration1', 'password', 'Passwort').required.pass1( data-error="Поле пароля должно быть не меньше 6 символов")
+          .column.left
+            +formGroup('userpassword-registration2', 'password', 'Passwort wiederholen: ').required.pass2(data-error="пароли должны совпадать")
+          .column.left
+            +formGroup('useremail-registration', 'email', 'Email').required( data-error="Заполните поле  Email")
+          .column.left
+            +radio('radio-registration1', 'radio-registration','Herr')(checked)
+            +radio('radio-registration2', 'radio-registration','Frau')
+          .column.colunn-full.left
+            +formGroup('username-firma', 'text', 'Firma(Optional)')
+          .column.left
+            +formGroup('username-st', 'text', 'Strasse')
+          .column.left
+            +formGroup('username-op', 'text', 'Nr.(Optional)')
+          .column.left
+            +formGroup('username-pzl', 'text', 'PLZ')
+          .column.left
+            +formGroup('username-ort', 'text', 'Ort)')
+
+        .btm.text-center
+          button.btn Speichern
+block scripts
+
+
+

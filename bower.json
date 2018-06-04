@@ -1,0 +1,22 @@
+{
+  "name": "mytask",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "aleks"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "2.1.4",
+    "fancybox": "^3.2.5"
+  }
+}

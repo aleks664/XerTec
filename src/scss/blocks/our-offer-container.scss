@@ -1,0 +1,50 @@
+.our-offer-container {
+  margin-top: 90px;
+  padding-bottom: 50px;
+  @include mq('tablet') {
+    margin-top: 35px;
+    padding-bottom: 25px;
+  }
+  .head {
+    margin-bottom: 20px;
+    position: relative;
+    padding-right: 80px;
+    .title {
+      margin: 0;
+    }
+    .btn-wrap {
+      position: absolute;
+      right: 0;
+      top: 0;
+      a {
+        float: left;
+        width: 33px;
+        height: 33px;
+        border: 1px solid $blue;
+        text-align: center;
+        line-height: 31px;
+        .icon {
+          vertical-align: middle;
+        }
+        &:hover {
+          background: $blue;
+          .icon {
+            @include sprite($arrow-right);
+          }
+        }
+        &.prev {
+          margin-right: 8px;
+          .icon {
+            transform: rotate(180deg);
+          }
+        }
+      }
+    }
+  }
+  .carousel {
+    margin: 0 -10px;
+    .itm {
+      padding: 0 10px;
+    }
+  }
+}

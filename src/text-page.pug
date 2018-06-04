@@ -1,0 +1,49 @@
+extends templates/base/base.pug
+append vars
+  - var pageUrl = 'control.html';
+  - var pageTitle = 'Control';
+
+block content
+  +breadcrumbs('AGB', 'XerTec.ch')
+  .wrapper
+    .main-column-wrap
+      .column.column-left-small
+        include templates/blocks/sidebar.pug
+      .column
+        h1 AGB h1
+        p Die AGB der Firma XerTec GmbH für die angebotenen Dienstleistungen stehen Ihnen im PDF
+          | Format zum download zur Verfügung:
+          P AGB –
+            = ' '
+            a(href="#") Trocknungsdienstleistungen XerTec GmbH
+        h2 AGB h2
+        p Die AGB der Firma XerTec GmbH für die angebotenen Dienstleistungen stehen Ihnen im PDF
+          | Format zum download zur Verfügung:
+          P AGB –
+            = ' '
+            a(href="#") Trocknungsdienstleistungen XerTec GmbH
+        h3 AGB h3
+        p Die AGB der Firma XerTec GmbH für die angebotenen Dienstleistungen stehen Ihnen im PDF
+          | Format zum download zur Verfügung:
+          P AGB –
+            = ' '
+            a(href="#") Trocknungsdienstleistungen XerTec GmbH
+        h4 AGB h4
+        p Die AGB der Firma XerTec GmbH für die angebotenen Dienstleistungen stehen Ihnen im PDF
+          | Format zum download zur Verfügung:
+          P AGB –
+            = ' '
+            a(href="#") Trocknungsdienstleistungen XerTec GmbH
+        h5 AGB h5
+        p Die AGB der Firma XerTec GmbH für die angebotenen Dienstleistungen stehen Ihnen im PDF
+        |Format zum download zur Verfügung:
+        P AGB –
+          = ' '
+          a(href="#") Trocknungsdienstleistungen XerTec GmbH
+          = ' '
+          | Die AGB der Firma XerTec GmbH für die angebotenen Dienstleistungen stehen Ihnen im PDF
+          |           Format zum download zur Verfügung:
+
+block scripts
+
+

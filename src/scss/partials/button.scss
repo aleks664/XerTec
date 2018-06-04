@@ -1,0 +1,48 @@
+.btn {
+  display: inline-block;
+  border: none;
+  font-size: 14px;
+  line-height: 22px;
+  padding: 16px 25px;
+  background: $bluelight;
+  text-align: center;
+  color: #FFF;
+  &:hover {
+    background: $blueDark;
+    color: #FFF;
+  }
+  .icon {
+    vertical-align: middle;
+    margin-right: 10px;
+    top: -2px;
+    &.icon-right {
+      margin: 0 0 0 10px;
+    }
+  }
+  &.btn-full {
+    width: 100%;
+    display: block;
+  }
+  &.btn-green {
+    background: #00BB0A;
+    &:hover {
+      background: #00BB0A*0.8;
+    }
+  }
+  &.btn-lg {
+    @include mq('tablet', min) {
+      font-size: 24px;
+    }
+  }
+  &.btn-white {
+    border: 1px solid $blue;
+    background-color: $white;
+    color: $blue;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    &:hover {
+      background: $blue;
+      color: $white;
+    }
+  }
+}

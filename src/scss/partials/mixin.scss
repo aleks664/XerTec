@@ -1,0 +1,100 @@
+
+
+@mixin transition($time: 0.3s, $duration: 0s) {
+  transition: all $time ease $duration;
+}
+
+
+@mixin mq($width, $type: max) {
+  @if map_has_key($breakpoints, $width) {
+   $width: map_get($breakpoints, $width);
+   @if $type == max {
+    $width: $width - 1px;
+   }
+   @media only screen and (#{$type}-width: $width) {
+    @content;
+   }
+  }
+}
+
+
+@mixin btn($height, $c-bg, $c-text: #fff, $font-size: 14px, $display: inline-block, $rounded: true) {
+	//@warn "height = #{$height}";
+	//@debug "height = #{$height}";
+	@if $rounded {
+		border-radius: $height / 2;
+	}
+	height: $height;
+	line-height:$height;
+	padding:0 $height / 2;
+	display: $display;
+	background-color:$c-bg;
+	color: $c-text;
+	font-size: px2em($font-size);
+	text-align: center;
+	vertical-align: middle;
+	-ms-touch-action: manipulation;
+	touch-action: manipulation;
+	cursor: pointer;
+	border: 1px solid transparent;
+	white-space: nowrap;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	text-decoration:none;
+	//@include transition(background-color $transition ease);
+	&:hover,
+	&:active,
+	&:focus {
+		color: $c-text;
+		text-decoration:none;
+		outline: none;
+	}
+}
+
+@mixin format-text($font-size: 14px, $font-weight: 500, $color: false, $line-height: false) {
+	font-size: px2em($font-size);
+	font-weight: $font-weight;
+
+	@if $color {
+		color:$color;
+	}
+
+	@if $line-height {
+		line-height: px2em($line-height);
+	}
+	@else {
+		line-height: 100%;
+	}
+}
+
+
+@mixin center {
+	position:absolute;
+	margin:auto;
+	left:0;
+	top:0;
+	right:0;
+	bottom:0;
+}
+
+// add muted bg
+@mixin muted($color: #000, $opacity: 0.5) {
+	position:relative;
+	&:before {
+		content:'';
+		position:absolute;
+		left:0;
+		right:0;
+		top:0;
+		bottom:0;
+		background-color:rgba($color, $opacity);
+	}
+}
+
+@mixin background-type($size: cover) {
+	background-position: center center;
+	background-size: $size;
+	background-repeat: no-repeat;
+}

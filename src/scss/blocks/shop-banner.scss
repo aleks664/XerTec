@@ -1,0 +1,94 @@
+.shop-banner {
+  .pict-wrap {
+    margin: 0 0 20px;
+    overflow: hidden;
+    position: relative;
+    height: 500px;
+    img {
+      display: block;
+      width: 100%;
+    }
+    .descirpiton {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 90px 35px 35px;
+      font-size: 16px;
+      line-height: 28px;
+    }
+    @include mq('tablet') {
+      margin: 0;
+      height: 350px;
+      &:before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        content: '';
+        width: 100%;
+        height: 100%;
+        background: rgba(#fff, 0.5);
+      }
+      .descirpiton {
+        z-index: 3;
+        padding: 25px 15px;
+        text-align: center;
+        font-size: 16px;
+        line-height: 26px;
+        br {
+          display: none;
+        }
+        .head-border {
+          &:after {
+            left: 50%;
+            margin-left: -35px;
+          }
+        }
+      }
+    }
+  }
+  .row {
+    margin: 0 -10px;
+    .column {
+      padding: 0 10px;
+      @include mq('tablet', min) {
+        width: 50%;
+      }
+      @include mq('tablet') {
+        margin: 15px 0 0;
+        width: 100%;
+      }
+      .block {
+        background: url(../images/shop-banner-bg.jpg) 0 0 repeat;
+        padding: 71px 25px;
+        @include mq('tablet') {
+          padding: 15px;
+        }
+        .tbl {
+          width: auto;
+          margin: 0 auto;
+          .tbc {
+            vertical-align: middle;
+            text-align: left;
+            font-size: 25px;
+            line-height: 36px;
+            font-weight: bold;
+            &.icon {
+              width: 100px;
+              text-align: center;
+              border-right: 2px solid $blue;
+            }
+            &.ttl {
+              padding-left: 40px;
+              @include mq('tablet') {
+                padding-left: 20px;
+
+              }
+            }
+
+          }
+        }
+      }
+    }
+  }
+}

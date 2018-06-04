@@ -1,0 +1,50 @@
+// start main-banner
+.main-banner.text-center.white
+  .wrapper
+    .row
+      .column.left
+        form.form
+          .inner
+          .order-type
+            .row
+              .item.active(data-type='1')
+                .box-border
+                  .top
+                    .icon-wrap
+                      i.icon.icon_setting-small-gray
+                  .ttl Geräte
+                  .txt
+                    | Miete einzelner Geräte
+                    br
+                    | Freie Wahl der Anzahl Geräte und der Mietdauer
+              .item(data-type='2')
+                .box-border
+                  .top
+                    .icon-wrap
+                      i.icon.icon_object-small
+                  .ttl Wohnungen/EFH
+                  .txt
+                    | Definieren sie die einzelnen Wohnungen / EFH und bestimmen sie die Trocknungsreihnfolge über die Trocknungsphasen.
+
+
+
+          .input-wrap
+            input#search(type='text',  placeholder='Sag uns, in welcher Stadt du Trocknen möchtest')
+            #search-autocomplete.search-autocomplete
+              .inner
+          a(href='javascript:void(0)')#do_calculate.btn.btn-full.bold
+            | Zum Auftragskonfigurator
+            i.icon.icon_arrow-right.icon-right
+          a(href="#").lnk Bediente Gebiete anzeigen
+      .column.left
+        .descirpiton.text-center
+          .head-border
+            h1.title
+              | Namnet på huvudet
+              br
+              |             i två rader
+          .txt
+            |I sin kärna, fisk texten är ett alternativ till den traditionella lorem ipsum, som gör att vissa människor förvirring när man försöker läsa den fisk smsa
+          a(href="#") Gå till erbjudande
+
+// end main-banner

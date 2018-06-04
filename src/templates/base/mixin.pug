@@ -1,0 +1,72 @@
+mixin product(pict, txt)
+  .product-preview&attributes(attributes)
+    .pict
+      img(src=pict, alt="")
+    .btn.btn-full.bold
+      |Luftentfeuchter
+      i.icon.icon_arrow-right.icon-right
+    .txt!=txt
+    a(href="product-detail.html").lnk-abs
+mixin newsPrev(pict, date, ttl, txt)
+  .news-preview&attributes(attributes)
+    .border-top
+    .border-right
+    .border-bottom
+    .border-left
+    .pict
+      img(src=pict, alt="")
+    .desc
+      .date!=date
+      .ttl.bold!=ttl
+      .txt!=txt
+    //.blue.more.bold
+    //  span Weiter lesen
+    a(href="#").lnk-abs
+mixin listLink(...items)
+  ul&attributes(attributes)
+    each item in items
+      li
+        a(href="#")!=item
+mixin listLi(...items)
+  ul&attributes(attributes)
+    each item in items
+      li!=item
+mixin formGroup(id,type, lbl)
+  .form-group
+    .inp-wrap
+      input(type=type, id=id, name=id).form-control&attributes(attributes)
+      label.form-label(for=id)!=lbl
+mixin textarea(id,  lbl)
+  .form-group
+    .inp-wrap
+      textarea(id=id, name=id).form-control&attributes(attributes)
+      label.form-label(for=id)!=lbl
+mixin checkbox(id, lbl)
+  span.inp-wrap.inp-wrap-checkbox
+    input(type='checkbox', name=id, id=id).checkbox&attributes(attributes)
+    label(for=id).form-checkbox
+      span.icon-wrap
+        i.icon.icon_checked-blue
+      !=lbl
+mixin radio(id, name, lbl)
+  span.inp-wrap.inp-wrap-radio
+    input(type='radio', name=name, id=id).radio&attributes(attributes)
+    label(for=id).form-radio
+      span.icon-wrap
+        span
+      !=lbl
+mixin breadcrumbs(end, ...items)
+  .breadcrumbs&attributes(attributes)
+    .wrapper
+      ul
+        each item in items
+          li
+            a(href="#")
+              span=item
+        li
+          span=end
+mixin pagination(...items)
+  .pagination&attributes(attributes)
+    ul
+      each item in items
+        li!=item

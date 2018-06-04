@@ -1,0 +1,432 @@
+.object-selection {
+  .tabs-head {
+    margin-bottom: 10px;
+    ul {
+      font-size: 0;
+      line-height: 0;
+      margin: 0;
+      padding: 0;
+      li {
+        display: inline-block;
+        vertical-align: top;
+        margin: 0 10px;
+
+        .icon-wrap {
+          height: 33px;
+          margin-bottom: 5px;
+        }
+        a {
+          display: block;
+          padding: 10px 20px 5px;
+          border: none;
+          font-size: 14px;
+          line-height: 17px;
+          color: #bebebe;
+          @include mq('tablet') {
+            padding: 10px 10px 5px;
+          }
+        }
+        &.active a {
+          background: #F1F7FC;
+          color: #000;
+          font-weight: bold;
+          .icon_setting-gray-small {
+            @include sprite($setting-blue-small);
+          }
+          .icon_house-gray-small {
+            @include sprite($house-blue-small);
+          }
+        }
+        a:hover {
+          background: $blueSuperLight;
+        }
+      }
+    }
+  }
+  form > .row {
+    margin: 0 -10px;
+    > .tbl {
+      @include mq('tablet-wide') {
+        display: block;
+      }
+      > .tbc {
+        padding: 0 10px;
+        width: 40%;
+        position: relative;
+        padding-bottom: 130px;
+        @include mq('tablet-wide') {
+          padding-bottom: 0;
+          display: block;
+          width: 100%;
+          .form-group {
+            margin-bottom: 15px;
+          }
+        }
+        .btm {
+          position: absolute;
+          width: 100%;
+          padding: 0 15px;
+          bottom: 0;
+          left: 0;
+          @include mq('tablet-wide') {
+            position: static;
+          }
+        }
+        &:first-child {
+          width: 60%;
+          padding-bottom: 0;
+          @include mq('tablet-wide') {
+            display: block;
+            width: 100%;
+          }
+        }
+        & + .tbc {
+          .form-group {
+            margin-bottom: 10px;
+          }
+          .box-blue {
+            @include mq('tablet-wide', min) {
+              //padding-left: 10px;
+              //padding-right: 10px;
+            }
+
+          }
+        }
+      }
+    }
+
+    .footnonte {
+      font-size: 14px;
+      line-height: 17px;
+      margin: 5px 0 15px;
+    }
+    .price {
+      margin: 23px 0 30px;
+      font-size: 16px;
+      line-height: 19px;
+      .ttl {
+        font-size: 18px;
+        line-height: 22px;
+      }
+    }
+
+    .ttl {
+      margin-bottom: 30px;
+      .city {
+        width: 100%;
+        font-size: 24px;
+        line-height: 27px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      @include mq('tablet') {
+        margin-bottom: 15px;
+      }
+    }
+    .btn {
+      margin-top: 20px;
+    }
+
+    .personal-data {
+      font-size: 14px;
+      line-height: 18px;
+      .form-checkbox {
+        padding-top: 0;
+      }
+    }
+    .box-blue {
+      background: $blueSuperLight;
+      padding: 25px 30px;
+      & + .box-blue {
+        margin-top: 10px;
+      }
+      @include mq('tablet-wide') {
+        margin-bottom: 10px;
+      }
+      @include mq('tablet') {
+        padding: 15px;
+      }
+    }
+  }
+  .years-list {
+    list-style-type: none;
+    margin: 0 -10px 0 0;
+    padding: 0;
+    font-size: 0;
+    line-height: 0;
+    li {
+      display: inline-block;
+      vertical-align: top;
+      margin-right: 10px;
+      margin-bottom: 10px;
+      .radio:checked + .form-radio {
+        background: $blue;
+        color: $white;
+      }
+      .form-radio {
+        padding: 23px 43px;
+        font-size: 19px;
+        line-height: 24px;
+        display: block;
+        background: #FFF;
+        @include mq('tablet') {
+          padding: 23px 40px;
+        }
+        @include transition();
+        .icon-wrap {
+          display: none;
+        }
+        &:hover {
+          background: $blue;
+          color: $white;
+        }
+      }
+    }
+  }
+  .month-list {
+    list-style-type: none;
+    margin: 0 -5px;
+    padding: 0;
+    overflow: hidden;
+    li {
+      float: left;
+      padding: 0 5px;
+      width: 100/12+%;
+      @include mq('tablet') {
+        margin-bottom: -10px;
+      }
+      &:first-child {
+        margin-left: 0;
+      }
+      @include mq('tablet') {
+        width: 100/6+%;
+        margin-bottom: 10px;
+      }
+      .radio:checked + .form-radio {
+        background: $blue;
+        color: $white;
+      }
+      .form-radio {
+        padding: 10px 5px;
+        font-size: 14px;
+        line-height: 23px;
+        display: block;
+        background: #FFF;
+        @include transition();
+        .icon-wrap {
+          display: none;
+        }
+        &:hover {
+          background: $blue;
+          color: $white;
+        }
+      }
+    }
+  }
+  .total-sum {
+    background: white;
+    .tbc {
+      padding: 20px 15px;
+      font-size: 24px;
+      line-height: 30px;
+    }
+  }
+  .what-need {
+    > .tbl {
+      @include mq('tablet') {
+        width: 100%;
+        display: block;
+      }
+      .tbc {
+        padding: 0 15px;
+        @include mq('tablet') {
+          width: 100%;
+          display: block;
+        }
+      }
+    }
+  }
+  .apartments {
+    margin: 0 -7.5px;
+    .tbl {
+      @include mq('tablet') {
+        display: block;
+        overflow: hidden;
+        position: relative;
+      }
+      .tbc {
+        padding: 0 7.5px;
+        @include mq('tablet') {
+          display: block;
+          width: 100/2+%;
+          float: left;
+          &:nth-child(5) {
+            width: 100%;
+            padding-right: 112px;
+          }
+          &:nth-child(6),
+          &:nth-child(7) {
+            width: 40px;
+            position: absolute;
+            bottom: 20px;
+            right: 0;
+          }
+          &:nth-child(7) {
+            bottom: 57px;
+          }
+          &:nth-child(6) {
+            right: 0px;
+          }
+        }
+        .lbl {
+          display: block;
+          padding-bottom: 5px;
+          font-size: 13px;
+          line-height: 17px;
+          position: relative;
+          .abs {
+            position: absolute;
+            left: 0;
+            @include mq('tablet') {
+              left: auto;
+              right:30px;
+              top: 25px;
+              text-align: right;
+            }
+          }
+        }
+        .area {
+          padding: 7px 0 7px;
+        }
+        .tbc-order,
+        .tbc-remove {
+          width: 57px;
+        }
+        .remove {
+          display: block;
+          width: 41px;
+          height: 41px;
+          border: none;
+          background: #DFE7EE;
+          text-align: center;
+          line-height: 41px;
+          font-size: 23px;
+          color: #4e4e4e;
+          @include mq('tablet') {
+            width: 25px;
+            height: 25px;
+            line-height: 25px;
+          }
+          &:hover {
+            color: #FFF;
+            background: $blue;
+          }
+        }
+        .order {
+          width: 41px;
+          height: 41px;
+          line-height: 41px;
+          font-size: 14px;
+          position: relative;
+          text-align: right;
+          @include mq('tablet') {
+            width: 25px;
+            height: 25px;
+            line-height: 25px;
+            margin-left: 0;
+          }
+          .open {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 10;
+          }
+          .list {
+            right: 0;
+            top: 0;
+            height: 41px;
+            min-width: 41px;
+            position: absolute;
+            white-space: nowrap;
+            @include mq('tablet') {
+              font-size: 0;
+              line-height: 0;
+            }
+            label {
+              cursor: pointer;
+              display: inline-block;
+              width: 41px;
+              height: 41px;
+              position: absolute;
+              top: 0;
+              right: 0;
+              opacity: 0;
+              margin-left: 5px;
+              background: #DFE7EE;
+              color: #4e4e4e;
+              text-align: center;
+              line-height: 41px;
+              font-size: 14px;
+              &:hover {
+                background: $blueDark;
+                color: #FFF;
+              }
+              @include mq('tablet') {
+                width: 25px;
+                height: 25px;
+                line-height: 25px;
+                margin-left: 2px;
+              }
+            }
+            input:checked + label {
+              background: $blue;
+              color: #FFF;
+              z-index: 1;
+              opacity: 1;
+              @include transition();
+            }
+          }
+          &.open {
+            .open {
+            }
+            .list {
+              input:checked + label {
+                z-index: 1;
+              }
+              label {
+                position: relative;
+                z-index: 11;
+                opacity: 1;
+                box-shadow: 0 3px 5px rgba(#000, 0.1);
+              }
+
+            }
+          }
+        }
+        .inp-count-wrap {
+          label {
+            white-space: nowrap;
+            display: block;
+            padding-bottom: 5px;
+            font-size: 13px;
+            line-height: 17px;
+          }
+          .count {
+            a {
+              width: 25px;
+            }
+            input {
+              min-width: 60px;
+              padding: 11px 10px;
+              font-size: 13px;
+              line-height: 17px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

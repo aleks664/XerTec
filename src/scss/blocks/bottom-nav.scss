@@ -1,0 +1,60 @@
+.bottom-nav {
+  padding: 140px 0 0;
+  @include mq('tablet') {
+    padding: 30px 0 0;
+  }
+  .row {
+    @include mq('tablet',min) {
+      display: flex;
+      flex-flow: row wrap;
+    }
+    @include mq('tablet-wide') {
+      @include mq('tablet', min) {
+        margin: 0 -10px;
+      }
+    }
+    .column {
+      @include mq('tablet',min) {
+        display: flex;
+      }
+      float:left;
+      width: 100%;
+      padding: 10px 15px;
+      @include mq('tablet', min) {
+        width: 100/3+%;
+      }
+      @include mq('tablet-wide') {
+        @include mq('tablet', min) {
+          font-size: 16px;
+          line-height: 22px;
+          padding: 10px ;
+        }
+      }
+      .box {
+        width: 100%;
+        padding: 30px 25px;
+        color: $GraphiteBlack;
+        background-color: #F3F7FC;
+        .ttl {
+          font-size: 22px;
+          line-height: 26px;
+          margin: 0;
+        }
+        ul {
+          list-style-type: none;
+          margin: 0;
+          padding: 0;
+          li {
+            margin: 15px 0 0;
+            a {
+              color: $GraphiteBlack;
+              &:hover {
+                color: $blue;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

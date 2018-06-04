@@ -1,0 +1,78 @@
+.info-section {
+  position: relative;
+  @include mq('tablet', min) {
+    font-size: 17px;
+
+  }
+  .pict-wrap {
+    width: 50%;
+    left: 0;
+    top: 0;
+    height: 100%;
+    position: absolute;
+    @include mq('tablet') {
+      width: 100%;
+      img  {
+        display: none;
+      }
+    }
+    img {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+    }
+    &.right {
+      left: auto;
+      right: 0px;
+      img {
+        left: 0px;
+      }
+    }
+  }
+  .row {
+    .column {
+      position: relative;
+      z-index: 5;
+      display: flex;
+      flex-flow: row wrap;
+      align-items: center;
+      justify-content: center;
+      min-height: 500px;
+      padding: 40px 15px 40px 50px;
+      @include mq('tablet', min) {
+        width: 50%;
+      }
+      @include mq('tablet') {
+        display: block;
+        width: 100%;
+        padding: 25px 15px 10px 25px;
+        min-height: 1px;
+      }
+      .text {
+        width: 100%;
+        .title {
+          font-size: 30px;
+          line-height: 33px;
+          color: #1d1d1d;
+          margin: 0 0 20px;
+          @include mq('tablet-wide', min) {
+            font-size: 40px;
+            line-height: 44px;
+          }
+          @include mq('tablet') {
+            font-size: 25px;
+            line-height: 30px;
+          }
+        }
+      }
+      &.left {
+        padding-left: 15px;
+        padding-right: 50px;
+        @include mq('tablet') {
+          width: 100%;
+          padding: 25px 15px 10px 25px;
+        }
+      }
+    }
+  }
+}

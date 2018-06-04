@@ -1,0 +1,72 @@
+extends templates/base/base.pug
+append vars
+  - var pageUrl = 'Online-Shop.html';
+  - var pageTitle = 'Online-Shop';
+
+block content
+  +breadcrumbs('AGB', 'XerTec.ch')
+  .wrapper
+    .main-column-wrap
+      .column.column-left-small
+        include templates/blocks/sidebar-shop
+      .column
+        .product-detail
+          .top.row
+            .column.left
+              .slider
+                .itm
+                  img(src="images/prod-detail-pict.jpg", alt="")
+                .itm
+                  img(src="images/prod-detail-pict2.jpg", alt="")
+                .itm
+                  img(src="images/prod-detail-pict3.jpg", alt="")
+              .carousel
+                .itm
+                  .in
+                    img(src="images/prod3.jpg", alt="")
+                .itm
+                  .in
+                    img(src="images/prod2.jpg", alt="")
+                .itm
+                  .in
+                    img(src="images/prod1.jpg", alt="")
+            .column.left
+              h1.ttl.bold ML 524 DC
+              .model.blue.bold CHF 2471.00
+              .subttl.bold Inverter-Wandgeräte in Split-Ausführung
+              .desc
+                |Einfache Installation über Türen oder im oberen Wandbereich Raumgröße bis 160m3
+              .settings.clearfix
+                .inp-count-wrap.left
+                  |QTY:
+                  .count
+                    input(type="text" name="" value="1" data-step="1")
+                    a(href="#").plus +
+                    a(href="#").minus -
+                a(href="#").btn.btn-green.right In den Warenkorb
+          .tabs
+            .tabs-head
+              ul
+                li.active
+                  a(href="#prod-tab1") Beschreibung
+                li
+                  a(href="#prod-tab2") Technische Daten
+            .tabs-wrap
+              .tab#prod-tab1.active
+                p
+                  | Die Geräte kühlen, filtern und entfeuchten die schwüle Raumluft. Das Außenteil kann individuell aufgestellt werden.
+                  | Außen auf dem Boden, an der Wand, auf dem Dach oder in gut be­lüfteten Räumen.
+                p
+                  | Die Inverter-Technik der Serie REMKO ML DC sorgt für ein angenehmes Raumklima in Verbindung mit geringen Energiekosten.
+                  | Der eingebaute Inverter-Verdichter arbeitet modulierend und sorgt so für minimale Temperaturschwankungen.
+                p
+                  | Die Inverter-Technik spart Energiekosten
+                +listLi('Automatischer Wiederanlauf nach Spannungsausfall','3D-Swing Funktion mit horizontaler und vertikaler Luftverteilung','Follow-Me Funktion für den Temperaturabgleich zwischen Gerät und Fernbedienung','Potentialfreier Kontakt für das externe Ein- und Ausschalten','Intergrierter Ionengenerator zur Verbesserung der Raumluft','Programmierbare 24 Std. Timer-Funktion','Universell einsetzbar durch max. 30 m lange Verbindungsleitungen','Geräuscharmer Gerätebetrieb (Silent-Mode)','Frostschutzfunktion – Heizen mit Sollwert 8 °C', 'Die Außenteile sind werksseitig mit Kältemittel R 410A vorgefüllt (bis 5 mLeitungslänge)')
+                p
+                  b Zubehör
+                +listLi('Kältemittelleitungen','Wand- und Bodenkonsolen','Kondensatpumpe','Temperaturgesteuerte Winterregelung für den Heizbetrieb bis -15 °C','Multi-Central-Controller MCC-1 mit Wochenprogramm')
+              .tab#prod-tab2
+                p
+                  b Zubehör
+                +listLi('Kältemittelleitungen','Wand- und Bodenkonsolen','Kondensatpumpe','Temperaturgesteuerte Winterregelung für den Heizbetrieb bis -15 °C','Multi-Central-Controller MCC-1 mit Wochenprogramm')
+block scripts

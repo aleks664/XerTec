@@ -1,0 +1,115 @@
+.registration-container {
+  max-width: 690px;
+  margin: 0 auto;
+  .title {
+    font-size: 24px;
+    line-height: 27px;
+    margin-bottom: 15px;
+    @include mq('tablet', min) {
+      margin-bottom: 35px;
+    }
+  }
+  .steps {
+    margin-bottom: 90px;
+    @include mq('tablet') {
+      margin-bottom: 35px;
+    }
+    ul {
+      overflow: hidden;
+      margin: 0;
+      padding: 0;
+      list-style-type: none;
+      position: relative;
+      &:before {
+        content: '';
+        width: 99%;
+        height: 1px;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        margin-top: -0.5px;
+        background: $blue;
+      }
+      li {
+        float:left;
+        width: 100/3+%;
+        text-align: center;
+        &:first-child {
+          text-align: left;
+          div {
+            padding-left: 0;
+          }
+        }
+        &:last-child {
+          text-align: right;
+          div {
+            padding-right: 0;
+          }
+        }
+        &.active {
+          div {
+            span {
+              background: $blue;
+              color: $white;
+            }
+          }
+        }
+        div {
+          display: inline-block;
+          vertical-align: top;
+          padding: 0 8px;
+          background: #FFF;
+          position: relative;
+          z-index: 10;
+        }
+        span {
+          width: 45px;
+          height: 45px;
+          display: block;
+          border-radius: 100%;
+          line-height: 45px;
+          text-align: center;
+          color: #000000;
+          background-color: #E7EDF5;
+        }
+      }
+    }
+  }
+  form {
+    .inp-wrap-radio {
+      margin-top: 20px;
+      margin-bottom: 20px;
+      display: inline-block;
+      @include mq('tablet') {
+        margin-top: 3px;
+
+      }
+      &+.inp-wrap-radio {
+        margin-left: 10px;
+      }
+    }
+    .column {
+      padding: 0 15px;
+      width: 50%;
+      &.colunn-full {
+        width: 100%;
+      }
+      @include mq('tablet') {
+        width: 100%;
+
+      }
+    }
+    .btm {
+      position: relative;
+      .login {
+        margin: 13px 0;
+        @include mq('tablet', min) {
+          top: 0;
+          position: absolute;
+          right: 0;
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}

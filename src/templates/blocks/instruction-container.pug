@@ -1,0 +1,26 @@
+// start instruction-container
+section.instruction-container
+  .wrapper
+    .head-border.text-center
+      h1.title So einfach geht’s
+      div.sub-title Effiziente Bautrocknung in vier Schritten
+    .row
+      mixin instruction(num, icon, ttl, txt)
+        .item.left&attributes(attributes)
+          .box.text-center
+            .border-top
+            .border-right
+            .border-bottom
+            .border-left
+            .num
+              span!=num
+            .inner
+              .icon-wrap
+                i.icon(class="icon_" + icon)
+              .ttl.bold!=ttl
+              .txt!=txt
+      +instruction('01', 'marker', 'Objektstandort', 'Geben Sie die Ortschaft ein, in welcher das zu trocknende Objekt gebaut oder umgebaut wird')
+      +instruction('02', 'inst-3', 'Auftragsspezifikation', 'Definieren Sie die Anzahl Trocknungsgeräte und die Mietdauer selbständig oder beim Geräterechner die Anzahl Zimmer, Wohnfläche, Raumhöhe, Trocknungsreihenfolge')
+      +instruction('03', 'doc', 'Offertanfrage', 'Nach Eingabe des detallierten Objektstandortes und der Angabe eines provisorischen Ausführungstermins erhalten Sie von uns ein schriftliche Offerte')
+      +instruction('<i class="icon icon_checked-green"></i>', 'glasses', 'Overvakning torkning', 'Nach Eingabe des detallierten Objektstandortes und der Angabe eines provisorischen Ausführungstermins erhalten Sie von uns ein schriftliche Offerte')
+// end instruction-container

@@ -1,0 +1,29 @@
+.sidebar {
+  background: $blueSuperLight;
+  padding: 25px 25px;
+  @include mq('tablet') {
+    padding: 15px;
+    
+  }
+  nav {
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      li {
+        padding-top: 6px;
+        a {
+          @include mq('tablet', min) {
+            font-size: 17px;
+            line-height: 22px;
+
+          }
+          color: #000;
+          &:hover {
+            color: $blue;
+          }
+        }
+      }
+    }
+  }
+}
